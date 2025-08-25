@@ -14,7 +14,6 @@ const orderHistory = [
       "category": "Cookware",
       "price": 45.99,
       "currency": "USD",
-      "stock": 25,
       "description": "Durable nonstick fry pan ideal for everyday cooking, easy to clean and PFOA-free."
     },
     {
@@ -24,7 +23,6 @@ const orderHistory = [
       "category": "Kitchen Tools",
       "price": 32.50,
       "currency": "USD",
-      "stock": 40,
       "description": "Set of 3 mixing bowls with airtight lids, perfect for baking, mixing, and storing."
     },
     {
@@ -34,7 +32,6 @@ const orderHistory = [
       "category": "Bakeware",
       "price": 54.00,
       "currency": "USD",
-      "stock": 15,
       "description": "Heavy-duty stoneware dish for casseroles, lasagna, and oven-to-table serving."
     },
     {
@@ -44,7 +41,6 @@ const orderHistory = [
       "category": "Cutlery",
       "price": 69.95,
       "currency": "USD",
-      "stock": 50,
       "description": "Professional chef's knife with ergonomic handle and stainless-steel blade."
     },
     {
@@ -54,7 +50,6 @@ const orderHistory = [
       "category": "Food Prep",
       "price": 64.99,
       "currency": "USD",
-      "stock": 18,
       "description": "Chop, mix, and blend ingredients quickly with this manual hand-powered processor."
     },
     {
@@ -64,7 +59,6 @@ const orderHistory = [
       "category": "Cookware",
       "price": 79.00,
       "currency": "USD",
-      "stock": 12,
       "description": "Pre-seasoned cast iron skillet for even heat distribution and versatile cooking."
     },
     {
@@ -74,7 +68,6 @@ const orderHistory = [
       "category": "Kitchen Tools",
       "price": 24.95,
       "currency": "USD",
-      "stock": 60,
       "description": "Effortlessly press garlic cloves with a sturdy design and included cleaning tool."
     }
   ]
