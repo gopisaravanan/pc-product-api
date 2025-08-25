@@ -79,8 +79,11 @@ const orderHistory = [
     }
   ]
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
+app.get('/health', (req, res) => {
+    res.send({
+        success: true,
+        message: 'Server is running'
+    })
 })
 
 
