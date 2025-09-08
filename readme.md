@@ -1,19 +1,14 @@
-# Get all orders for user123 (returns all 7 orders)
-GET http://localhost:7001/api/orders?userId=user123
+# Get all orders for globalId 1621989
+GET http://localhost:7001/GetOrderHistory/orders?globalId=1621989
 
-GET http://localhost:7001/api/orders?userId=user123&limit=1
+# Get orders within a specific date range
+GET http://localhost:7001/GetOrderHistory/orders?globalId=1621989&startDate=2025-01-01&endDate=2025-03-05
 
-# Search for products with "pan" in the title
-GET http://localhost:7001/api/orders?userId=user123&filter=pan
+# Get orders from a specific start date
+GET http://localhost:7001/GetOrderHistory/orders?globalId=1621989&startDate=2025-01-01
 
-# Search for "chef" products (returns Chef's Knife)
-GET http://localhost:7001/api/orders?userId=user123&filter=chef
+# Get orders up to a specific end date
+GET http://localhost:7001/GetOrderHistory/orders?globalId=1621989&endDate=2025-02-28
 
-# Search for "skillet" and limit to 1 result
-GET http://localhost:7001/api/orders?userId=user123&filter=skillet&limit=1
-
-# Search for "bowl" products (returns Mixing Bowl Set)
-GET http://localhost:7001/api/orders?userId=user123&filter=bowl
-
-# Search for kitchen items with "tool" in the title
-GET http://localhost:7001/api/orders?userId=user123&filter=tool
+# Example with different globalId (for demonstration)
+GET http://localhost:7001/GetOrderHistory/orders?globalId=150768&startDate=2025-01-01&endDate=2025-03-05
