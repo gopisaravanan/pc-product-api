@@ -433,145 +433,6 @@ const orderHistory = {
             ]
         },
         {
-            "orderNumber": "59221960870839",
-            "date": "2025-01-04",
-            "customer": {
-                "firstName": "Angela",
-                "lastName": "Skipper"
-            },
-            "currency": "USD",
-            "lineItems": [
-                {
-                    "product": {
-                        "sku": "2583",
-                        "name": "Mix 'N Chop"
-                    },
-                    "quantity": 1,
-                    "total": 0
-                },
-                {
-                    "product": {
-                        "sku": "2622",
-                        "name": "Mini Serving Spatula"
-                    },
-                    "quantity": 1,
-                    "total": 0
-                },
-                {
-                    "product": {
-                        "sku": "PB2332",
-                        "name": "Host Bonus Mystery Gift/12'24/NA"
-                    },
-                    "quantity": 1,
-                    "total": 0
-                },
-                {
-                    "product": {
-                        "sku": "RP1086",
-                        "name": "Air Fryer Cooking Guide (#100194)"
-                    },
-                    "quantity": 1,
-                    "total": 3.38
-                },
-                {
-                    "product": {
-                        "sku": "100911",
-                        "name": "Funnels With Strainer"
-                    },
-                    "quantity": 1,
-                    "total": 6.16
-                },
-                {
-                    "product": {
-                        "sku": "1742",
-                        "name": "2-cup(500ml) Prep Bowl Set"
-                    },
-                    "quantity": 1,
-                    "total": 8.88
-                },
-                {
-                    "product": {
-                        "sku": "2432",
-                        "name": "Small Batter Bowl"
-                    },
-                    "quantity": 1,
-                    "total": 10.49
-                },
-                {
-                    "product": {
-                        "sku": "100860",
-                        "name": "Cup Slicer"
-                    },
-                    "quantity": 1,
-                    "total": 12.33
-                },
-                {
-                    "product": {
-                        "sku": "2257",
-                        "name": "Measuring Cup Set"
-                    },
-                    "quantity": 1,
-                    "total": 12.34
-                },
-                {
-                    "product": {
-                        "sku": "1743",
-                        "name": "3-cup(750ml) Prep Bowl Set"
-                    },
-                    "quantity": 1,
-                    "total": 13.57
-                },
-                {
-                    "product": {
-                        "sku": "2431",
-                        "name": "Classic Batter Bowl"
-                    },
-                    "quantity": 1,
-                    "total": 15.42
-                },
-                {
-                    "product": {
-                        "sku": "1825",
-                        "name": "1-cup(250ml) Prep Bowl Set"
-                    },
-                    "quantity": 1,
-                    "total": 15.43
-                },
-                {
-                    "product": {
-                        "sku": "100193",
-                        "name": "Easy-Read Measuring Cup Set"
-                    },
-                    "quantity": 1,
-                    "total": 18
-                },
-                {
-                    "product": {
-                        "sku": "2585",
-                        "name": "Food Chopper"
-                    },
-                    "quantity": 1,
-                    "total": 22.5
-                },
-                {
-                    "product": {
-                        "sku": "100223",
-                        "name": "Leakproof Glass Container Set"
-                    },
-                    "quantity": 1,
-                    "total": 28.5
-                },
-                {
-                    "product": {
-                        "sku": "100287",
-                        "name": "Insulated Serving Bowl Set"
-                    },
-                    "quantity": 1,
-                    "total": 30.4
-                }
-            ]
-        },
-        {
             "orderNumber": "71088532340299",
             "date": "2025-01-06",
             "customer": {
@@ -23352,6 +23213,13 @@ app.get('/GetOrderHistory/orders', (req, res) => {
             message: error.message
         });
     }
+})
+
+app.get('/api/empty', (req, res) => {
+    res.json({
+        success: true,
+        data: []
+    });
 })
 
 
