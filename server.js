@@ -23168,43 +23168,56 @@ app.get('/GetOrderHistory/orders', (req, res) => {
             });
         }
 
-        // Return the order history data directly (since it already contains all orders for user 1621989)
-        // In a real application, you would filter by globalId and date range
-        let filteredOrders = orderHistory.data;
+        // Only return data for specific globalId (1621989), empty array for others
+        let filteredOrders = [];
+        
+        if (globalId === "1621989") {
+            filteredOrders = orderHistory.data;
 
-        // Filter by date range if provided
-        if (startDate || endDate) {
-            filteredOrders = orderHistory.data.filter(order => {
-                const orderDate = new Date(order.date);
-                let includeOrder = true;
+            // Filter by date range if provided
+            if (startDate || endDate) {
+                filteredOrders = orderHistory.data.filter(order => {
+                    const orderDate = new Date(order.date);
+                    let includeOrder = true;
 
-                if (startDate) {
-                    const start = new Date(startDate);
-                    includeOrder = includeOrder && orderDate >= start;
-                }
+                    if (startDate) {
+                        const start = new Date(startDate);
+                        includeOrder = includeOrder && orderDate >= start;
+                    }
 
-                if (endDate) {
-                    const end = new Date(endDate);
-                    includeOrder = includeOrder && orderDate <= end;
-                }
+                    if (endDate) {
+                        const end = new Date(endDate);
+                        includeOrder = includeOrder && orderDate <= end;
+                    }
 
-                return includeOrder;
-            });
+                    return includeOrder;
+                });
+            }
         }
+        // For any other globalId, filteredOrders remains empty array []
 
         // Return results
-        res.json({
-            success: true,
-            data: filteredOrders,
-            metadata: {
-                globalId: globalId,
-                totalResults: filteredOrders.length,
-                appliedFilters: {
-                    startDate: startDate || null,
-                    endDate: endDate || null
+        if (filteredOrders.length > 0) {
+            // Return with metadata when there's data
+            res.json({
+                success: true,
+                data: filteredOrders,
+                metadata: {
+                    globalId: globalId,
+                    totalResults: filteredOrders.length,
+                    appliedFilters: {
+                        startDate: startDate || null,
+                        endDate: endDate || null
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            // Return without metadata when data is empty
+            res.json({
+                success: true,
+                data: []
+            });
+        }
 
     } catch (error) {
         res.status(500).json({
